@@ -1,0 +1,15 @@
+<html>
+  <body>
+
+    <h1>Sites</h1>
+    <table>
+      {% for site in sites %}
+        <tr>
+          <td>
+            {{site.address}}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

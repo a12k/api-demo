@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+{% if session['logged_in'] %}
+<html>
+  <body>
+    <a href='/logout'>Logout</a>
+    <h1>Delete Site</h1>
+    <form method="POST" action="/manager">
+        <input type="text" name="delete">
+        <input type="submit" value="delete">
+    </form>
+
+    <h1>Burial Sites</h1>
+    {% for site in sites %}
+      <p>{{site}}</p>
+    {% endfor %}
+  </body>
+</html>
+
+{% else %}
+
+You need to login first!
+
+{% endif %}
+
+{% endblock %}
